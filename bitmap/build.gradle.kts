@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.spotless)
+    `maven-publish`
 }
 
 kotlin {
@@ -43,7 +44,30 @@ android {
     defaultConfig {
         minSdk = 21
     }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
+
 }
+
+
+afterEvaluate {
+    publishing {
+        println()
+        publications {
+            register<MavenPublication>("release") {
+                groupId = "com.github.nev3rfail"
+                artifactId = "bitmap.kt"
+                version = "1.0"
+            }
+        }
+    }
+}
+
+
 
 spotless {
     kotlin {
