@@ -8,6 +8,7 @@ plugins {
 kotlin {
     jvmToolchain(8)
     androidTarget {
+        publishLibraryVariants("release")
         compilations.all {
             kotlinOptions {
                 freeCompilerArgs += "-Xexpect-actual-classes"
@@ -44,24 +45,16 @@ android {
     defaultConfig {
         minSdk = 21
     }
-
-    publishing {
-        singleVariant("release") {
-            withSourcesJar()
-        }
-    }
-
 }
 
 
-afterEvaluate {
-    publishing {
-        println()
-        publications {
-            register<MavenPublication>("release") {
-                groupId = "com.github.nev3rfail"
-                artifactId = "bitmap.kt"
-                version = "1.0"
+publishing {
+    publications {
+        publications.configureEach {
+            if (this is MavenPublication) {
+                pom {
+                    name.set("bitmap.kt")
+                }
             }
         }
     }
