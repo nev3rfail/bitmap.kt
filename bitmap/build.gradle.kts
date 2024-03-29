@@ -14,7 +14,10 @@ kotlin {
                 freeCompilerArgs += "-Xexpect-actual-classes"
                 jvmTarget = JavaVersion.VERSION_1_8.toString()
             }
+
         }
+
+
     }
     jvm {
         compilations.all {
@@ -45,6 +48,19 @@ android {
     defaultConfig {
         minSdk = 21
     }
+
+    buildTypes {
+        release {
+            this.isMinifyEnabled = true
+        }
+    }
+    publishing {
+        multipleVariants {
+            allVariants()
+            withSourcesJar()
+        }
+    }
+
 }
 
 
