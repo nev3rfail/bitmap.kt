@@ -25,7 +25,7 @@ Add a dependency. Platform libraries (*-jvm, *-android) will be automatically in
 kotlin {
     sourceSets {
         commonMain.dependencies {
-            implementation("com.github.mihonapp.bitmap~kt:bitmap:dependable_release")
+            implementation("com.github.mihonapp.bitmap~kt:bitmap:initial_release")
         }
     }
 }
