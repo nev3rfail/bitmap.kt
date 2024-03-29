@@ -20,7 +20,7 @@ dependencies {
 ```
 
 Add a dependency. Platform libraries (*-jvm, *-android) will be automatically included into the corresponding source sets.
-> `dependable_release` here is a tag. use `:main-SNAPSHOT` to use the latest version from branch `main`, use `:main-325e1ad` to refer to a certain commit hash.
+> `initial_release` here is a tag. use `:main-SNAPSHOT` to use the latest version from branch `main`, use `:main-325e1ad` to refer to a certain commit hash.
 ```build.gradle.kts
 kotlin {
     sourceSets {
