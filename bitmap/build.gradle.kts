@@ -51,7 +51,7 @@ android {
 
     buildTypes {
         release {
-            this.isMinifyEnabled = true
+            //this.isMinifyEnabled = true
         }
     }
     publishing {
