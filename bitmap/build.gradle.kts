@@ -53,7 +53,7 @@ publishing {
         publications.configureEach {
             if (this is MavenPublication) {
                 pom {
-                    name.set("bitmap.kt")
+                    //name.set("bitmap")
                 }
             }
         }
