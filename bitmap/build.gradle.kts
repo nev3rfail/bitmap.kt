@@ -49,33 +49,13 @@ android {
         minSdk = 21
     }
 
-    buildTypes {
-        release {
-            //this.isMinifyEnabled = true
-        }
-    }
     publishing {
         multipleVariants {
             allVariants()
             withSourcesJar()
         }
     }
-
 }
-
-
-publishing {
-    publications {
-        publications.configureEach {
-            if (this is MavenPublication) {
-                pom {
-                    //name.set("bitmap")
-                }
-            }
-        }
-    }
-}
-
 
 
 spotless {
